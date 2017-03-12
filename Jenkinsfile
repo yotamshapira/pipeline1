@@ -3,7 +3,16 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'hello'
+        parallel(
+          "Build": {
+            echo 'hello'
+            
+          },
+          "stuff": {
+            echo 'sdf'
+            
+          }
+        )
       }
     }
     stage('Test') {
@@ -17,8 +26,8 @@ pipeline {
             echo 'testing in firefox'
             
           },
-          "sdf": {
-            echo 'sdfsdsd'
+          "Yotam1": {
+            sh 'echo 1'
             
           }
         )
@@ -27,6 +36,11 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'deploying'
+      }
+    }
+    stage('asdasd') {
+      steps {
+        echo 'asd'
       }
     }
   }
