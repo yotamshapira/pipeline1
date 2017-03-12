@@ -16,6 +16,10 @@ pipeline {
           "Firefox": {
             echo 'testing in firefox'
             
+          },
+          "sdf": {
+            echo 'sdfsdsd'
+            
           }
         )
       }
